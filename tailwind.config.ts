@@ -1,3 +1,4 @@
+
 import type { Config } from "tailwindcss";
 
 export default {
@@ -61,6 +62,14 @@ export default {
 					'accent-foreground': 'hsl(var(--sidebar-accent-foreground))',
 					border: 'hsl(var(--sidebar-border))',
 					ring: 'hsl(var(--sidebar-ring))'
+				},
+				// MindEase custom colors
+				mindease: {
+					primary: '#6E59A5',
+					secondary: '#8B5CF6',
+					accent: '#D3E4FD',
+					light: '#E5DEFF',
+					dark: '#1A1F2C',
 				}
 			},
 			borderRadius: {
@@ -84,11 +93,45 @@ export default {
 					to: {
 						height: '0'
 					}
+				},
+				'float': {
+					'0%, 100%': {
+						transform: 'translateY(0)'
+					},
+					'50%': {
+						transform: 'translateY(-10px)'
+					}
+				},
+				'pulse-soft': {
+					'0%, 100%': {
+						opacity: '1'
+					},
+					'50%': {
+						opacity: '0.8'
+					}
+				},
+				'gradient-flow': {
+					'0%': {
+						backgroundPosition: '0% 50%'
+					},
+					'50%': {
+						backgroundPosition: '100% 50%'
+					},
+					'100%': {
+						backgroundPosition: '0% 50%'
+					}
 				}
 			},
 			animation: {
 				'accordion-down': 'accordion-down 0.2s ease-out',
-				'accordion-up': 'accordion-up 0.2s ease-out'
+				'accordion-up': 'accordion-up 0.2s ease-out',
+				'float': 'float 6s ease-in-out infinite',
+				'pulse-soft': 'pulse-soft 4s ease-in-out infinite',
+				'gradient-flow': 'gradient-flow 15s ease infinite'
+			},
+			backgroundImage: {
+				'hero-pattern': 'linear-gradient(135deg, #E5DEFF 0%, #D3E4FD 100%)',
+				'cta-pattern': 'linear-gradient(135deg, #6E59A5 0%, #8B5CF6 100%)',
 			}
 		}
 	},
