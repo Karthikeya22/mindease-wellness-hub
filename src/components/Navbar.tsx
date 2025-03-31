@@ -1,5 +1,6 @@
 
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Menu, X, Brain } from "lucide-react";
 
@@ -12,8 +13,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between">
           {/* Logo */}
           <div className="flex items-center space-x-2">
-            <Brain className="h-8 w-8 text-mindease-primary" />
-            <span className="text-xl font-bold mindease-gradient-text">MindEase</span>
+            <Link to="/" className="flex items-center space-x-2">
+              <Brain className="h-8 w-8 text-mindease-primary" />
+              <span className="text-xl font-bold mindease-gradient-text">MindEase</span>
+            </Link>
           </div>
 
           {/* Desktop Navigation */}
@@ -22,6 +25,9 @@ const Navbar = () => {
             <a href="#how-it-works" className="text-gray-700 hover:text-mindease-primary transition-colors">How It Works</a>
             <a href="#testimonials" className="text-gray-700 hover:text-mindease-primary transition-colors">Testimonials</a>
             <a href="#faq" className="text-gray-700 hover:text-mindease-primary transition-colors">FAQ</a>
+            <Link to="/login">
+              <Button variant="outline" className="mr-2">Login</Button>
+            </Link>
             <Button className="bg-mindease-primary hover:bg-mindease-secondary text-white mindease-button">
               Get Started
             </Button>
@@ -73,6 +79,13 @@ const Navbar = () => {
             >
               FAQ
             </a>
+            <Link 
+              to="/login"
+              className="block w-full"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              <Button variant="outline" className="w-full mb-2">Login</Button>
+            </Link>
             <Button 
               className="w-full bg-mindease-primary hover:bg-mindease-secondary text-white mindease-button"
               onClick={() => setIsMenuOpen(false)}
